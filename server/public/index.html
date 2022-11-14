@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="styles/style.css">
+
+    <script src="vendors/jQuery.js"></script>
+    <script src="scripts/client.js"></script>
+
+    <title>Joey's Server Calculator</title>
+</head>
+
+<body>
+    <h2>Joey's Calculator</h2>
+
+    <input class="js-first-math-input" type="number" name="numberOne" placeholder="number">
+    <button data-math="plus" class="js-btn-math">+</button>
+    <button data-math="subtract"class="js-btn-math">-</button>
+    <button data-math="multiply"class="js-btn-math">*</button>
+    <button data-math="divide"class="js-btn-math">/</button>
+    <input class="js-second-math-input" type="number" name="numberTwo" placeholder="number">
+    <button class="js-btn-submit">=</button>
+    <button class="js-btn-clear">clear</button>
+
+    <h4 class="js-total-container">Total:</h4>
+
+    <h3>History:</h3>
+    
+    <ul class="js-container"></ul>
+
+</body>
+
+</html>
