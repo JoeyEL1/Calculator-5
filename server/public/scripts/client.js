@@ -18,9 +18,9 @@ function getData() {
         type:'GET',
         url: '/math',
     }).then((response) => {
-        arrayDataForDom = response.array;
+        arrayDataForDom = response;
         console.log(arrayDataForDom);
-         render(response);
+         render(arrayDataForDom);
     }); 
 }
 
@@ -46,7 +46,8 @@ function postData(){
         data: dataForServer
     }).then((response) => {
         console.log(response);
-        getData();
+        //getData();
+        render(response);
     });
 }
 
@@ -56,16 +57,19 @@ function clearInputs(){
 }
 
 function render(arrayDataForDom) {
-    $('#js-container').empty();
-    $('.js-total-container').text(`${data.total}`);
-    for (let data of arrayDataForDom) {
-    $('.js-container').append(`
-       <div>
-           ${data.numberOne}
-           ${data.operator}
-           ${data.numberTwo}
-           =
-           ${data.total}
-       </div>`);
+    $('.js-container').empty();
+    if (arrayDataForDom.length > 0) 
+    {
+        $('.js-total-container').text(`${arrayDataForDom[arrayDataForDom.length-1].total}`);
+        for (let data of arrayDataForDom) {
+            $('.js-container').append(`
+            <div>
+                ${data.numberOne}
+                ${data.operator}
+                ${data.numberTwo}
+                =
+                ${data.total}
+            </div>`);
+        }
     }
 }

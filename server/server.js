@@ -13,7 +13,7 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/math', (req,res) => {
-    res.send(arraySender);
+    res.send(mathHistory);
 });
 
 app.post('/math', (req,res) => {
@@ -52,7 +52,7 @@ app.post('/math', (req,res) => {
        
     }
     console.log(arraySender);
-    res.send('shanice its working');
+    res.send(mathHistory);
 
 });
 
